@@ -32,9 +32,11 @@ public class HomeActivity extends AppCompatActivity {
         listTracksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Ajoutez votre code ici pour gérer le clic sur le bouton d'affichage de la liste des pistes
+                // Redirection vers l'activité TasksActivity pour afficher la liste des tâches
+                startActivity(new Intent(HomeActivity.this, TasksActivity.class));
             }
         });
+
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override

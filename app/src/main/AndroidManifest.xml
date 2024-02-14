@@ -50,5 +50,8 @@
             android:label="Add Track"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+        <activity
+            android:name=".TasksActivity"
+            android:exported="false" />
     </application>
 </manifest>

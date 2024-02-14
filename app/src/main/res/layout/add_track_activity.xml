@@ -19,19 +19,27 @@
         android:layout_margin="16dp"/>
 
     <EditText
-        android:id="@+id/start_date_field"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Start Date (YYYY-MM-DD)"
-        android:layout_below="@id/description_field"
-        android:layout_margin="16dp"/>
-
-    <EditText
         android:id="@+id/end_date_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="End Date (YYYY-MM-DD)"
-        android:layout_below="@id/start_date_field"
+        android:layout_below="@id/description_field"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/image_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Image"
+        android:layout_below="@id/end_date_field"
+        android:layout_margin="16dp"/>
+
+    <EditText
+        android:id="@+id/document_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Document"
+        android:layout_below="@id/image_field"
         android:layout_margin="16dp"/>
 
     <Button
@@ -39,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Track"
-        android:layout_below="@id/end_date_field"
+        android:layout_below="@id/document_field"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"/>
 

@@ -71,7 +71,7 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            String userId = mAuth.getCurrentUser().getUid();
+                            String userId = email; // Utiliser l'e-mail comme ID utilisateur
                             saveUserDataToFirestore(userId, firstName, lastName, tel);
                             Toast.makeText(SignUpActivity.this, "User created successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
@@ -83,13 +83,13 @@ public class SignUpActivity extends AppCompatActivity {
                 });
     }
 
-    private void saveUserDataToFirestore(String userId, String firstName, String lastName, String tel) {
+    private void saveUserDataToFirestore(String email, String firstName, String lastName, String tel) {
         Map<String, Object> userData = new HashMap<>();
         userData.put("firstName", firstName);
         userData.put("lastName", lastName);
         userData.put("tel", tel);
 
-        db.collection("user").document(userId)
+        db.collection("user").document(email) // Utiliser l'e-mail comme ID du document
                 .set(userData)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -102,4 +102,5 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                 });
     }
+
 }
