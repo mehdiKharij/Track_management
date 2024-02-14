@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1045677453537",
+    "project_id": "track-management-5a6b1",
+    "storage_bucket": "track-management-5a6b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045677453537:android:c16ff043bd94be602dc7a0",
+        "android_client_info": {
+          "package_name": "com.example.track_management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQkaoYUEntY5f2sBYhH3vc65DBKfuZ6-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
