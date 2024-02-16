@@ -7,9 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,9 +42,21 @@ public class TasksActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
-        taches= new  LinkedList<Tache>();
+        taches = new LinkedList<>();
 
-        myRecycler=findViewById(R.id.recycler_tasks);
+        myRecycler = findViewById(R.id.recycler_tasks);
+        FloatingActionButton fabAdd = findViewById(R.id.fab_add); // Récupérer le bouton fab_add
+
+        // Ajouter un écouteur de clic pour le bouton fab_add
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Redirection vers AddTrackActivity
+                Intent intent = new Intent(TasksActivity.this, AddTaskActivity.class);
+                startActivity(intent);
+            }
+        });
+
         getTasks();
     }
 
@@ -70,52 +85,5 @@ public class TasksActivity extends AppCompatActivity {
                         }
                     }
                 });
-        /*
-        db.collection("tasks")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Tache tache= new Tache(document.getString("title"),document.getString("description"),document.getString("deadline"),document.getString("img"));
-                                taches.add(tache);
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                            }
-
-                            myRecycler.setHasFixedSize(true);
-                            // use a linear layout manager
-                            LinearLayoutManager layoutManager = new LinearLayoutManager(TasksActivity.this);
-                            myRecycler.setLayoutManager(layoutManager);
-                            // specify an adapter (see also next example)
-                            MyAdapter myAdapter = new MyAdapter(taches,TasksActivity.this);
-                            myRecycler.setAdapter(myAdapter);
-                        } else {
-                            Log.w(TAG, "Error getting documents.", task.getException());
-                        }
-                    }
-                });
-
-       */
-
     }
 }
-
-
-/*
-DocumentReference docRef = db.collection("user").document(currentUser.getEmail());
-        docRef.collection("tasks").get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Tache tache= new Tache(document.getString("title"),document.getString("description"),document.getString("deadline"),document.getString("img"));
-                                taches.add(tache);
-                            }
-                        } else {
-                            Log.d("not ok", "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
- */

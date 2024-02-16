@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Redirection vers l'activité AddTrackActivity
-                startActivity(new Intent(HomeActivity.this, AddTrackActivity.class));
+                startActivity(new Intent(HomeActivity.this, AddTaskActivity.class));
             }
         });
 

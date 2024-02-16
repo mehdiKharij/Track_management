@@ -31,8 +31,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_margin="16dp"
-        android:contentDescription="Ajouter un nouveau contact"
-        android:src="@android:drawable/ic_input_add"/>
+        android:contentDescription="Ajouter une tâche"
+        android:src="@android:drawable/ic_input_add"
+        android:onClick="onAddTaskButtonClick" />
+
 
 
 </LinearLayout>

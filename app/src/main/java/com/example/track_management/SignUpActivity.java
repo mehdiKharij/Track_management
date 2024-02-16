@@ -21,6 +21,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -29,6 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     private EditText mEmailField, mPasswordField, mFirstNameField, mLastNameField, mTelField;
     private Button mSignUpButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +55,19 @@ public class SignUpActivity extends AppCompatActivity {
                 signUp();
             }
         });
+
+        // Ajoutez cette partie de code ici
+        TextView loginRedirectText = findViewById(R.id.login_redirect_text);
+        loginRedirectText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Redirection vers LoginActivity
+                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     private void signUp() {
         String email = mEmailField.getText().toString();
@@ -102,5 +118,7 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
 
 }
