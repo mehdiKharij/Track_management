@@ -7,15 +7,29 @@
     android:padding="16dp"
     tools:context=".AddTaskActivity">
 
+    <!-- Titre "Ajouter une Tâche" -->
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter une Tâche"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/mauve_color"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Titre de la tâche -->
     <EditText
         android:id="@+id/task_title_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Titre de la tâche"
         android:inputType="text"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/title_text_view"
         android:layout_marginBottom="8dp" />
 
+    <!-- Description de la tâche -->
     <EditText
         android:id="@+id/task_description_edit_text"
         android:layout_width="match_parent"
@@ -27,6 +41,7 @@
         android:layout_below="@id/task_title_edit_text"
         android:layout_marginBottom="8dp" />
 
+    <!-- Date limite -->
     <EditText
         android:id="@+id/task_deadline_edit_text"
         android:layout_width="match_parent"
@@ -36,6 +51,7 @@
         android:layout_below="@id/task_description_edit_text"
         android:layout_marginBottom="8dp" />
 
+    <!-- URL de l'image -->
     <EditText
         android:id="@+id/task_img_edit_text"
         android:layout_width="match_parent"
@@ -45,6 +61,7 @@
         android:layout_below="@id/task_deadline_edit_text"
         android:layout_marginBottom="8dp" />
 
+    <!-- URI du document -->
     <EditText
         android:id="@+id/task_doc_uri_edit_text"
         android:layout_width="match_parent"
@@ -54,6 +71,7 @@
         android:layout_below="@id/task_img_edit_text"
         android:layout_marginBottom="8dp" />
 
+    <!-- Bouton pour ajouter la tâche -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"
@@ -64,6 +82,5 @@
         android:contentDescription="Ajouter la tâche"
         android:src="@drawable/check_circle"
         app:backgroundTint="@color/mauve_color" />
-
 
 </RelativeLayout>

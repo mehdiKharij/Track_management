@@ -1,5 +1,4 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -30,29 +29,25 @@
     <EditText
         android:id="@+id/login_email"
         android:layout_width="match_parent"
-        android:layout_height="32dp"
-    android:hint="Email"
-    android:inputType="textEmailAddress"
-    android:background="@drawable/edit_text_background"
-    android:layout_below="@id/login_title"
-    android:layout_marginStart="32dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginEnd="32dp"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_title"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"/>
 
     <!-- Password EditText -->
     <EditText
         android:id="@+id/login_password"
         android:layout_width="match_parent"
-        android:layout_height="32dp"
-    android:hint="Password"
-    android:inputType="textPassword"
-    android:background="@drawable/edit_text_background"
-    android:layout_below="@id/login_email"
-    android:layout_marginStart="32dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginEnd="32dp"/>
-
-
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_email"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Password"
+        android:inputType="textPassword"/>
 
     <!-- Login Button -->
     <Button
@@ -60,12 +55,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        android:background="@drawable/button_background"
         android:layout_below="@id/login_password"
         android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/mauve_color"
         android:layout_marginStart="64dp"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="64dp" />
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/button_background"/>
 
     <!-- Signup Text -->
     <TextView
@@ -76,8 +72,7 @@
         android:layout_below="@id/login_button"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="64dp"/>
-
 
 </RelativeLayout>

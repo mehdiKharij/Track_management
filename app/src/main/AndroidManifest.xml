@@ -43,6 +43,10 @@
             android:name=".HomeActivity"
             android:label="Home"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".MainActivity"
+            android:label="Main"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <activity
             android:name=".AddTaskActivity"

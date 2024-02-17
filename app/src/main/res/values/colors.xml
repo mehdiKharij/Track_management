@@ -3,6 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lavender">#8692f7</color>
-    <color name="mauve_color">#884da7</color> <!-- Exemple de couleur mauve -->
+    <color name="mauve_color">#884da7</color>
+    <color name="blue">#1eafff</color>
+    <!-- Exemple de couleur mauve -->
 
 </resources>
