@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gt"
     android:padding="16dp"
     tools:context=".AddTaskActivity">
 
@@ -12,75 +14,113 @@
         android:id="@+id/title_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ajouter une Tâche"
+        android:text="Add new Task"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/mauve_color"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp" />
+        android:textColor="@color/white"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp" />
 
     <!-- Titre de la tâche -->
-    <EditText
-        android:id="@+id/task_title_edit_text"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Titre de la tâche"
-        android:inputType="text"
-        android:layout_below="@id/title_text_view"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp">
+
+        <EditText
+            android:id="@+id/task_title_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:inputType="text"
+            android:padding="16dp"
+            android:background="@null" />
+
+    </androidx.cardview.widget.CardView>
 
     <!-- Description de la tâche -->
-    <EditText
-        android:id="@+id/task_description_edit_text"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Description de la tâche"
-        android:inputType="textMultiLine"
-        android:maxLength="200"
-        android:maxLines="5"
-        android:layout_below="@id/task_title_edit_text"
-        android:layout_marginBottom="8dp" />
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp"
+        android:background="@null" >
 
-    <!-- Date limite -->
-    <EditText
-        android:id="@+id/task_deadline_edit_text"
+        <EditText
+            android:id="@+id/task_description_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description of the task"
+            android:inputType="textMultiLine"
+            android:maxLength="200"
+            android:maxLines="5"
+            android:padding="16dp"
+            android:background="@null" />
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Date limite (YYYY-MM-DD)"
-        android:inputType="date"
-        android:layout_below="@id/task_description_edit_text"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp">
+
+        <EditText
+            android:id="@+id/task_deadline_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Deadline (YYYY-MM-DD)"
+            android:inputType="date"
+            android:padding="16dp"
+            android:background="@null" />
+    </androidx.cardview.widget.CardView>
 
     <!-- URL de l'image -->
-    <EditText
-        android:id="@+id/task_img_edit_text"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="URL de l'image (facultatif)"
-        android:inputType="textUri"
-        android:layout_below="@id/task_deadline_edit_text"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp">
+
+        <EditText
+            android:id="@+id/task_img_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URL image (facultatif)"
+            android:inputType="textUri"
+            android:padding="16dp"
+            android:background="@null" />
+    </androidx.cardview.widget.CardView>
 
     <!-- URI du document -->
-    <EditText
-        android:id="@+id/task_doc_uri_edit_text"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="URI du document (facultatif)"
-        android:inputType="textUri"
-        android:layout_below="@id/task_img_edit_text"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp">
+
+        <EditText
+            android:id="@+id/task_doc_uri_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URI du document (facultatif)"
+            android:inputType="textUri"
+            android:padding="16dp"
+            android:background="@null" />
+    </androidx.cardview.widget.CardView>
 
     <!-- Bouton pour ajouter la tâche -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp"
         android:contentDescription="Ajouter la tâche"
         android:src="@drawable/check_circle"
-        app:backgroundTint="@color/mauve_color" />
+        app:backgroundTint="@color/dark_violet" />
 
-</RelativeLayout>
+</LinearLayout>

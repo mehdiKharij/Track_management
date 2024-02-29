@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+
+
     implementation("com.google.firebase:firebase-firestore:24.10.1")
     implementation("com.google.firebase:firebase-auth:21.0.3")
     implementation("com.github.bumptech.glide:glide:4.14.2")

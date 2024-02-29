@@ -25,8 +25,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.LinkedList;
 
 import model.Tache;
-
-public class TasksActivity extends AppCompatActivity {
+public class TasksActivity extends AppCompatActivity implements MyAdapter.OnItemClickListener {
 
     FirebaseFirestore db;
     LinkedList<Tache> taches;
@@ -78,12 +77,24 @@ public class TasksActivity extends AppCompatActivity {
                             LinearLayoutManager layoutManager = new LinearLayoutManager(TasksActivity.this);
                             myRecycler.setLayoutManager(layoutManager);
                             // specify an adapter (see also next example)
-                            MyAdapter myAdapter = new MyAdapter(taches,TasksActivity.this);
+                            MyAdapter myAdapter = new MyAdapter(taches, TasksActivity.this, TasksActivity.this);
                             myRecycler.setAdapter(myAdapter);
                         } else {
                             Log.d("not ok", "Error getting documents: ", task.getException());
                         }
                     }
                 });
+    }
+
+    // Méthode pour gérer les clics sur les éléments de la liste
+    @Override
+    public void onItemClick(Tache tache) {
+        // Ouvrir TaskDetailsActivity avec les détails de la tâche sélectionnée
+        Intent intent = new Intent(TasksActivity.this, TaskDetailsActivity.class);
+        intent.putExtra("title", tache.getTitle());
+        intent.putExtra("description", tache.getDescription());
+        intent.putExtra("deadline", tache.getDeadline());
+        intent.putExtra("img", tache.getImg());
+        startActivity(intent);
     }
 }

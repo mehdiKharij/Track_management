@@ -38,15 +38,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Déclarez HomeActivity -->
-        <activity
-            android:name=".HomeActivity"
-            android:label="Home"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity
-            android:name=".MainActivity"
-            android:label="Main"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <activity
             android:name=".AddTaskActivity"
@@ -56,5 +47,13 @@
         <activity
             android:name=".TasksActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".TaskDetailsActivity"
+            android:exported="false" />
+
+
+
+
     </application>
 </manifest>

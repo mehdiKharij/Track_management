@@ -48,6 +48,10 @@ public class AddTaskActivity extends AppCompatActivity {
             public void onClick(View v) {
                 addTaskToFirestore();
             }
+            // Méthode appelée lors du clic sur la flèche de retour
+            public void onBackButtonClick(View view) {
+                finish(); // Fermer l'activité actuelle
+            }
         });
     }
 
