@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@drawable/add_back"
     tools:context=".TaskDetailsActivity">
 
     <!-- Titre de la tâche -->
@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="#000000"
         android:layout_marginBottom="8dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
@@ -23,7 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/titleTextView"
-        android:layout_marginBottom="8dp"/>
+        android:textColor="#333333"
+        android:layout_marginBottom="16dp" /> <!-- Augmentation de la marge inférieure -->
 
     <!-- Date limite de la tâche -->
     <TextView
@@ -31,7 +33,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/descriptionTextView"
-        android:layout_marginBottom="8dp"/>
+        android:textColor="#666666"
+        android:textStyle="italic"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" /> <!-- Augmentation de la marge inférieure -->
 
     <!-- Image de la tâche -->
     <ImageView
@@ -39,8 +45,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/deadlineTextView"
-        android:layout_marginBottom="8dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"/>
+        android:scaleType="fitCenter"
+        android:background="#ECECEC"
+        android:layout_marginBottom="16dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background" /> <!-- Rendre les coins non aigus -->
+
+    <!-- Boutons Modifier et Supprimer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modifier"
+            android:textColor="#FFFFFF"
+            android:padding="8dp"
+            android:backgroundTint="@color/green"
+            android:layout_margin="8dp" /> <!-- Marge externe -->
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supprimer"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/red"
+            android:padding="8dp"
+            android:layout_margin="8dp" />
+
+    </LinearLayout>
 
 </RelativeLayout>

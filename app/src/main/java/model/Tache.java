@@ -1,19 +1,21 @@
 package model;
 
 public class Tache {
-
+    private String id;
     private String title;
     private String description;
     private String deadline;
     private String img;
     private String doc_uri;
 
-    public Tache(String title, String description, String deadline, String img){
+    public Tache(String id,String title, String description, String deadline, String img){
         this.title=title;
         this.description=description;
         this.deadline=deadline;
         this.img=img;
+        this.id=id;
     }
+
 
     public String getTitle() {
         return title;
@@ -22,6 +24,15 @@ public class Tache {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 
     public String getDescription() {
         return description;

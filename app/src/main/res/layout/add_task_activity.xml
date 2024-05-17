@@ -5,21 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/gt"
     android:padding="16dp"
+    android:background="@drawable/back_total"
     tools:context=".AddTaskActivity">
-
-    <!-- Titre "Ajouter une Tâche" -->
-    <TextView
-        android:id="@+id/title_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add new Task"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp" />
 
     <!-- Titre de la tâche -->
     <androidx.cardview.widget.CardView
@@ -59,9 +47,7 @@
             android:background="@null" />
     </androidx.cardview.widget.CardView>
 
-
-
-
+    <!-- Deadline de la tâche -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -113,14 +99,16 @@
     </androidx.cardview.widget.CardView>
 
     <!-- Bouton pour ajouter la tâche -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add"
+    <Button
+        android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginTop="16dp"
-        android:contentDescription="Ajouter la tâche"
-        android:src="@drawable/check_circle"
-        app:backgroundTint="@color/dark_violet" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/button_background"
+        android:text="Add"
+        android:textColor="#FFFFFF" /> <!-- Couleur de texte blanche -->
+    <!-- Couleur bleu clair -->
 
 </LinearLayout>

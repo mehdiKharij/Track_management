@@ -5,8 +5,15 @@
     <color name="lavender">#8692f7</color>
     <color name="mauve_color">#884da7</color>
     <color name="blue">#1eafff</color>
+    <color name="purple">#603A91</color>
     <color name="light_violet">#E0B0FF</color>
-    <color name="dark_violet">#CF9FFF</color>
+    <color name="violet">#5E17EB</color>
+    <color name="light_blue">#0CC0DF</color>
+    <color name="green">#C1FF72</color>
+    <color name="dark_blue">#2C64C6</color> <!-- Vert -->
+    <color name="red">#FF5757</color> <!-- Rouge -->
+
+
 
     <!-- Exemple de couleur mauve -->
 

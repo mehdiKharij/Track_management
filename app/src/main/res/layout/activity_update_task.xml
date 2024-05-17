@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/updatyy"
+    android:padding="16dp">
+
+
+
+    <TextView
+        android:id="@+id/updateTaskTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="25sp"
+        android:textColor="@color/light_blue"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Reste de votre mise en page XML -->
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Titre"
+        android:layout_below="@id/updateTaskTitleTextView"
+    android:layout_marginBottom="16dp"
+    android:textSize="25sp"/>
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Description"
+        android:layout_below="@id/titleEditText"
+        android:layout_marginBottom="16dp"
+        android:textSize="25sp"/>
+
+    <EditText
+        android:id="@+id/deadlineEditText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Date limite"
+        android:layout_below="@id/descriptionEditText"
+        android:layout_marginBottom="16dp"
+        android:textSize="25sp"/>
+
+    <EditText
+        android:id="@+id/imageUrl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="URL de l'image"
+        android:layout_below="@id/deadlineEditText"
+        android:layout_marginBottom="16dp"
+        android:textSize="25sp"/>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_below="@id/imageUrl"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/dark_blue"
+        android:textSize="18sp"/>
+
+</RelativeLayout>

@@ -7,8 +7,8 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo"
-        android:label="TaskMaster"
+        android:icon="@drawable/img_2"
+        android:label="Task Pro"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Track_management"
@@ -16,7 +16,7 @@
 
         <!-- Déclaration de l'activité LoginActivity comme point de départ de l'application -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,10 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+        </activity>
         <!-- Déclaration de l'activité SignUpActivity -->
         <activity
             android:name=".SignUpActivity"
@@ -45,13 +49,45 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity
+            android:name=".AddNoteActivity"
+            android:label="Add Track"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+
+        <activity
             android:name=".TasksActivity"
             android:exported="false" />
+
+        
+
+        <activity
+            android:name=".NotesActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".NoteDetailsActivity"
+            android:exported="false" />
+
+
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+
 
         <activity
             android:name=".TaskDetailsActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".UpdateTaskActivity"
+            android:exported="false" />
 
 
 

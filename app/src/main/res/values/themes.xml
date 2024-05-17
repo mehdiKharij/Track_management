@@ -2,7 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Track_management" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorOnPrimary">@color/white</item> <!-- Couleur du texte sur la couleur primaire -->
+        <!-- Autres attributs de couleur à personnaliser selon vos besoins -->
     </style>
 
     <style name="Theme.Track_management" parent="Base.Theme.Track_management" />

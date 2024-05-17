@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_total">
+    android:padding="16dp"
+    tools:context=".NotesActivity"
+    android:background="@drawable/back_notes">>
 
+    <!-- Image du menu -->
     <ImageView
         android:id="@+id/menuImage"
         android:layout_width="wrap_content"
@@ -14,32 +16,32 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        app:srcCompat="@drawable/baseline_menu"
+        app:srcCompat="@drawable/notes_menu"
         android:onClick="openContextMenu" />
 
-    <ScrollView
+    <!-- RecyclerView pour afficher les notes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_notes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/menuImage"
-        android:layout_above="@id/fab_add">
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="vertical" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_tasks"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </ScrollView>
-
+    <!-- Bouton flottant pour ajouter une note -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:contentDescription="Ajouter une tâche"
         android:src="@android:drawable/ic_input_add"
-        android:onClick="onAddTaskButtonClick"
-        app:backgroundTint="@color/dark_blue" />
+        android:backgroundTint="@color/dark_blue"/>
 
 </RelativeLayout>

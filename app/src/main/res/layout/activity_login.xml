@@ -4,64 +4,67 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <!-- Logo -->
+    <!-- Background Image -->
     <ImageView
-        android:id="@+id/logo_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"/>
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/signin" />
 
-    <!-- Title -->
-    <TextView
-        android:id="@+id/login_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log in"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_below="@id/logo_image"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
-
-    <!-- Email EditText -->
-    <EditText
-        android:id="@+id/login_email"
+    <!-- Login Form Container -->
+    <RelativeLayout
+        android:id="@+id/login_form_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login_title"
+        android:layout_centerInParent="true"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:hint="Email"
-        android:inputType="textEmailAddress"/>
+        android:layout_marginEnd="32dp">
 
-    <!-- Password EditText -->
-    <EditText
-        android:id="@+id/login_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/login_email"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:hint="Password"
-        android:inputType="textPassword"/>
+        <!-- Email EditText -->
 
-    <!-- Login Button -->
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_below="@id/login_password"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/mauve_color"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="64dp"
-        android:background="@drawable/button_background"/>
+        <EditText
+            android:id="@+id/login_email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/rounded_background"
+            android:drawableLeft="@drawable/ic_email"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+
+        <!-- Login Button -->
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/login_email"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/rounded_background"
+            android:drawableLeft="@drawable/ic_password"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:layout_below="@id/login_password"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/dark_blue"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"/>
+
+
+
+
+
+
+    </RelativeLayout>
 
     <!-- Signup Text -->
     <TextView
@@ -69,10 +72,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don't have an account? Sign up"
-        android:layout_below="@id/login_button"
+        android:layout_alignParentBottom="true"
+        android:layout_above="@id/login_form_container"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="64dp"/>
+        android:layout_marginBottom="24dp"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>

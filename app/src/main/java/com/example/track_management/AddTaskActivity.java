@@ -1,20 +1,22 @@
 package com.example.track_management;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.HashMap;
 import java.util.Map;
-import com.google.firebase.firestore.DocumentReference;
-
 
 public class AddTaskActivity extends AppCompatActivity {
 
@@ -23,7 +25,7 @@ public class AddTaskActivity extends AppCompatActivity {
     private EditText taskDeadlineEditText;
     private EditText taskImgEditText;
     private EditText taskDocUriEditText;
-    private FloatingActionButton addButton;
+    private Button addButton;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
@@ -38,7 +40,7 @@ public class AddTaskActivity extends AppCompatActivity {
         taskDeadlineEditText = findViewById(R.id.task_deadline_edit_text);
         taskImgEditText = findViewById(R.id.task_img_edit_text);
         taskDocUriEditText = findViewById(R.id.task_doc_uri_edit_text);
-        addButton = findViewById(R.id.fab_add);
+        addButton = findViewById(R.id.btn_add);
 
         mAuth = FirebaseAuth.getInstance();
         mFirestore = FirebaseFirestore.getInstance();
@@ -47,10 +49,6 @@ public class AddTaskActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addTaskToFirestore();
-            }
-            // Méthode appelée lors du clic sur la flèche de retour
-            public void onBackButtonClick(View view) {
-                finish(); // Fermer l'activité actuelle
             }
         });
     }
@@ -64,7 +62,6 @@ public class AddTaskActivity extends AppCompatActivity {
 
         if (!taskDescription.isEmpty()) {
             String userEmail = mAuth.getCurrentUser().getEmail();
-
 
             Map<String, Object> task = new HashMap<>();
             task.put("title", taskTitle);
@@ -95,4 +92,3 @@ public class AddTaskActivity extends AppCompatActivity {
         }
     }
 }
-
